@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Для самой лучшей...</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Красивые шрифты с Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Конверт -->
+        <div class="envelope" onclick="openLetter()">
+            <div class="flap"></div>
+            <div class="heart"><i class="fas fa-heart"></i></div>
+            <p class="hint">Нажми на конверт</p>
+        </div>
+
+        <!-- Письмо (скрыто в начале) -->
+        <div class="letter" id="letter">
+            <div class="letter-content">
+                <button class="close-btn" onclick="closeLetter()">&times;</button>
+
+                <h1><i class="fas fa-heart"></i> Для моей солнышка <i class="fas fa-heart"></i></h1>
+
+                <p class="date">Сегодня и всегда...</p>
+
+                <div class="text">
+                    <p>Привет, моя хорошая ❤️</p>
+                    <p>Я долго думал, как сказать тебе самые важные слова, и решил сделать это здесь, чтобы они остались не только в памяти, но и в интернете, доступные с любого устройства.</p>
+                    <p>С тобой каждый день становится особенным. Твоя улыбка, твой смех, твоя поддержка — это то, ради чего хочется просыпаться.</p>
+                    <p>Это простое письмо — лишь маленькое напоминание о том, что ты самый лучший человек в моей жизни.</p>
+                    <p class="signature">Твой [Твоё Имя]</p>
+                </div>
+
+                <!-- Блок с причинами (можно добавить больше) -->
+                <div class="reasons">
+                    <h2><i class="fas fa-star"></i> 5 причин сегодня улыбнуться:</h2>
+                    <ul>
+                        <li>Ты уникальна и неповторима.</li>
+                        <li>Ты делаешь мой мир ярче.</li>
+                        <li>С тобой мне всегда спокойно и хорошо.</li>
+                        <li>Я могу быть с тобой самим собой.</li>
+                        <li>Мы создаём наши общие воспоминания.</li>
+                    </ul>
+                </div>
+
+                <!-- Место для вашего фото -->
+                <div class="photo-placeholder">
+                    <p>Здесь будет наше лучшее фото!</p>
+                    <!-- Чтобы добавить фото, замените ссылку в src на путь к вашему изображению -->
+                    <!-- <img src="ваше_фото.jpg" alt="Наше счастливое фото"> -->
+                </div>
+
+                <p class="footer-note">Создано с <i class="fas fa-heartbeat" style="color:#e74c3c;"></i> для тебя.</p>
+            </div>
+        </div>
+
+        <!-- Фон из сердечек -->
+        <div class="hearts-background"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
