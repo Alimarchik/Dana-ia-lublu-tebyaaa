@@ -1,0 +1,262 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #f5c3d5 0%, #f9e7f3 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden;
+    color: #333;
+}
+
+.container {
+    text-align: center;
+    position: relative;
+    width: 100%;
+    padding: 20px;
+}
+
+/* Стили для конверта */
+.envelope {
+    position: relative;
+    width: 280px;
+    height: 180px;
+    background: #ff7eb9;
+    margin: 100px auto 40px;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0 10px 25px rgba(255, 126, 185, 0.4);
+    transition: all 0.5s ease;
+}
+
+.envelope:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(255, 126, 185, 0.6);
+}
+
+.envelope:hover .heart {
+    transform: scale(1.2);
+}
+
+.flap {
+    position: absolute;
+    top: -70px;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-left: 140px solid transparent;
+    border-right: 140px solid transparent;
+    border-bottom: 70px solid #ff9ec9;
+    z-index: 2;
+    transform-origin: top;
+}
+
+.heart {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 60px;
+    color: #fff;
+    z-index: 3;
+    transition: transform 0.3s ease;
+}
+
+.hint {
+    margin-top: 220px;
+    color: #d45a8d;
+    font-weight: bold;
+    font-style: italic;
+}
+
+/* Стили для письма */
+.letter {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    width: 90%;
+    max-width: 700px;
+    background: #fff9fd;
+    border: 2px solid #ffc1dd;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    opacity: 0;
+    transition: opacity 0.5s, transform 0.7s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    overflow-y: auto;
+    max-height: 85vh;
+}
+
+.letter.active {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.close-btn {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    background: none;
+    border: none;
+    font-size: 32px;
+    color: #ff7eb9;
+    cursor: pointer;
+    line-height: 1;
+    transition: color 0.3s;
+}
+
+.close-btn:hover {
+    color: #e74c3c;
+}
+
+.letter-content h1 {
+    font-family: 'Dancing Script', cursive;
+    color: #e84393;
+    margin-bottom: 15px;
+    font-size: 2.8rem;
+}
+
+.date {
+    color: #888;
+    font-style: italic;
+    margin-bottom: 25px;
+}
+
+.text {
+    text-align: left;
+    font-size: 1.2rem;
+    line-height: 1.7;
+    margin-bottom: 30px;
+    font-family: 'Caveat', cursive;
+}
+
+.text p {
+    margin-bottom: 15px;
+}
+
+.signature {
+    text-align: right;
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: #e84393;
+    margin-top: 20px;
+    font-family: 'Dancing Script', cursive;
+}
+
+.reasons {
+    background: linear-gradient(to right, #ffeaf4, #fff);
+    border-left: 5px solid #ff7eb9;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 30px 0;
+    text-align: left;
+}
+
+.reasons h2 {
+    color: #d45a8d;
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.reasons ul {
+    list-style-type: none;
+    padding-left: 10px;
+}
+
+.reasons li {
+    padding: 8px 0;
+    font-size: 1.1rem;
+    position: relative;
+    padding-left: 30px;
+}
+
+.reasons li:before {
+    content: '💖';
+    position: absolute;
+    left: 0;
+}
+
+.photo-placeholder {
+    border: 3px dashed #ffb8d9;
+    border-radius: 15px;
+    padding: 40px 20px;
+    margin: 30px 0;
+    color: #c97ba5;
+    font-style: italic;
+}
+
+.photo-placeholder img {
+    width: 100%;
+    max-height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-top: 15px;
+}
+
+.footer-note {
+    margin-top: 20px;
+    color: #888;
+    font-size: 0.9rem;
+}
+
+/* Анимация сердечек на фоне */
+.hearts-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.hearts-background:before,
+.hearts-background:after {
+    content: '❤️';
+    position: absolute;
+    font-size: 20px;
+    opacity: 0.2;
+    animation: float 15s infinite linear;
+}
+
+.hearts-background:before {
+    top: 10%;
+    left: 5%;
+    animation-delay: 0s;
+}
+
+.hearts-background:after {
+    top: 70%;
+    left: 90%;
+    animation-delay: -7s;
+}
+
+@keyframes float {
+    0% { transform: translateY(0) rotate(0deg); }
+    100% { transform: translateY(-100vh) rotate(360deg); }
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .letter {
+        padding: 20px;
+        width: 95%;
+    }
+    .letter-content h1 {
+        font-size: 2.2rem;
+    }
+    .text, .reasons li {
+        font-size: 1rem;
+    }
+}

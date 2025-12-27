@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Для самой лучшей...</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Красивые шрифты с Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Конверт -->
+        <div class="envelope" onclick="openLetter()">
+            <div class="flap"></div>
+            <div class="heart"><i class="fas fa-heart"></i></div>
+            <p class="hint">Нажми на конверт</p>
+        </div>
+
+        <!-- Письмо (скрыто в начале) -->
+        <div class="letter" id="letter">
+            <div class="letter-content">
+                <button class="close-btn" onclick="closeLetter()">&times;</button>
+
+                <h1><i class="fas fa-heart"></i>  Менің алтыныма <i class="fas fa-heart"></i></h1>
+
+                <p class="date">Сегодня и всегда...</p>
+
+                <div class="text">
+                    <p>Привет, моя Данка ❤️</p>
+                    <p>Я долго думал, как сказать тебе самые важные слова, и решил сделать это здесь, чтобы они остались не только в памяти, но и в интернете, доступные с любого устройства. Веечно в интернете.</p>
+                    <p>С тобой каждый день становится особенным. Твоя улыбка, твой смех, твоя поддержка это то, ради чего хочется просыпаться. И дальше хочу так жить только с тобой. Я долго думал, когда же мне сказать это. И вот когда собираемся переходить на следущий год я бы хотел оставить нашу дружбу в этом году, и начать новый год особо близкими людми к друг другу. Я знаю что я далеко не идеален но я готов под тебя подстраиватся, я готов всегда поддерживать тебя.</p>
+                    <p>Это простое письмо — лишь маленькое напоминание о том, что ты самый лучший человек в моей жизни.</p>
+                    <p class="signature">Твой Алимарчик<3</p>
+                </div>
+
+                <!-- Блок с причинами (можно добавить больше) -->
+                <div class="reasons">
+                    <h2><i class="fas fa-star"></i> Интересные моменты:</h2>
+                    <ul>
+                        <li>Помнишь как мы изначально начали общатся по видео</li>
+                        <li>Как мы класно провели время в Алмате</li>
+                        <li>Мы лежали под зонтиком и смотрели друг на друга</li>
+                        <li>Как ты типа знакомила со своими родаками</li>
+                        <li>Как я впервые знакомил тебя сестренкой</li>
+                        <li>Как мы на самокате прокатились</li>
+                        <li>И дальше больше :).....</li>
+                    </ul>
+                </div>
+
+                <!-- Место для вашего фото -->
+                <div class="photo-placeholder">
+                    <p>Ал мында біздің әдемі фотолар</p>
+                    <!-- Чтобы добавить фото, замените ссылку в src на путь к вашему изображению -->
+                    <img src="images\1.jpeg" alt="Наше счастливое фото"> 
+                    <img src="images\2.jpeg" alt="Наше счастливое фото"> 
+                    <img src="images\3.jpeg" alt="Наше счастливое фото"> 
+                    <img src="images\4.jpeg" alt="Наше счастливое фото"> 
+                    <img src="images\5.jpeg" alt="Наше счастливое фото"> 
+                    <img src="images\6.jpeg" alt="Наше счастливое фото"> 
+                    <img src="images\7.jpeg" alt="Наше счастливое фото"> 
+                </div>
+
+                <p class="footer-note">Создано с любовью<i class="fas fa-heartbeat" style="color:#e74c3c;"></i> для тебя.</p>
+            </div>
+        </div>
+
+        <!-- Фон из сердечек -->
+        <div class="hearts-background"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
